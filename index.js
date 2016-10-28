@@ -1,7 +1,6 @@
 var Botkit = require('botkit');
 var wit = require('node-wit');
 
-var ACCESS_TOKEN = "UBCDXUPLEZDDL7C6GDYGTWVAWGUKR54I";
 var token = process.env.SLACK_TOKEN
 
 var controller = Botkit.slackbot({
