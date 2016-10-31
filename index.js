@@ -29,6 +29,7 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
+var wit = Witbot(witToken)
 
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
