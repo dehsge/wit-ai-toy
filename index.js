@@ -2,8 +2,9 @@ var Botkit = require('botkit')
 var wit = require('node-wit')
 
 var token = process.env.SLACK_TOKEN
+var witToken = process.env.WIT_TOKEN
 
-var controller = Botkit.slackbot({
+var controller = Botkit .slackbot({
   // reconnect to Slack RTM when connection goes bad
   retry: Infinity,
   debug: false
@@ -27,6 +28,7 @@ if (token) {
   console.log('Starting in Beep Boop multi-team mode')
   require('beepboop-botkit').start(controller, { debug: true })
 }
+
 
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
