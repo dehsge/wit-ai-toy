@@ -2,7 +2,6 @@ var Botkit = require('botkit')
 var wit = require('node-wit')
 
 var token = process.env.SLACK_TOKEN
-var witToken = process.env.WIT_TOKEN
 
 var controller = Botkit .slackbot({
   // reconnect to Slack RTM when connection goes bad
