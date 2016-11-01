@@ -36,15 +36,15 @@ var client = new function Wit({
     actions: {
         send(request, response) {
             return new Promise(function (resolve, reject) {
-                console.log(JSON.stringify(response));
-                return resolve();
-            });
+                console.log(JSON.stringify(response))
+                return resolve()
+            })
         },
         myAction({sessionId, context, text, entities}) {
-            console.log(`Session ${sessionId} received ${text}`);
-            console.log(`The current context is ${JSON.stringify(context)}`);
-            console.log(`Wit extracted ${JSON.stringify(entities)}`);
-            return Promise.resolve(context);
+            console.log(`Session ${sessionId} received ${text}`)
+            console.log(`The current context is ${JSON.stringify(context)}`)
+            console.log(`Wit extracted ${JSON.stringify(entities)}`)
+            return Promise.resolve(context)
         }
     }
 })
