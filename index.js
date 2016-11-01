@@ -1,5 +1,7 @@
+'use strict'
+
 var Botkit = require('botkit')
-var Wit = require('node-wit')
+const {Wit, log} = require('node-wit')
 
 var token = process.env.SLACK_TOKEN
 var witToken = process.env.WIT_TOKEN
@@ -28,9 +30,23 @@ if (token) {
   console.log('Starting in Beep Boop multi-team mode')
   require('beepboop-botkit').start(controller, { debug: true })
 }
+const {Wit, log} = require('node-wit');
 
-Wit.captureTextIntent(witToken, "hello", function (err, res) {
-    console.log("Response from Wit for text input: ");
-    if (err) console.log("Error: ", err);
-    console.log(JSON.stringify(res, null, " "));
+const client = new Wit({
+    accessToken: MY_TOKEN,
+    actions: {
+        send(request, response) {
+            return new Promise(function(resolve, reject) {
+                console.log(JSON.stringify(response));
+                return resolve();
+            });
+        },
+        myAction({sessionId, context, text, entities}) {
+            console.log(`Session ${sessionId} received ${text}`);
+            console.log(`The current context is ${JSON.stringify(context)}`);
+            console.log(`Wit extracted ${JSON.stringify(entities)}`);
+            return Promise.resolve(context);
+        }
+    },
+    logger: new log.Logger(log.DEBUG) // optional
 });
