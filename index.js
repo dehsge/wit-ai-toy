@@ -1,5 +1,5 @@
 var Botkit = require('botkit')
-var Witbot = require('node-wit')
+var Wit = require('node-wit')
 
 var token = process.env.SLACK_TOKEN
 var witToken = process.env.WIT_TOKEN
@@ -29,7 +29,7 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-wit.captureTextIntent(witToken, "hello", function (err, res) {
+Wit.captureTextIntent(witToken, "hello", function (err, res) {
     console.log("Response from Wit for text input: ");
     if (err) console.log("Error: ", err);
     console.log(JSON.stringify(res, null, " "));
