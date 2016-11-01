@@ -4,7 +4,7 @@
   "description": "A sample Beep Boop Node.js Slackbot",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node --use_strict --harmony_destructuring index.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   "dependencies": {
     "beepboop-botkit": "^1.4.1",
     "botkit": "~0.2.2",
-    "witbot": "^2.1.0"
+    "node-wit": "^4.1.0"
   },
   "engines": {
     "node": "4.2.6"

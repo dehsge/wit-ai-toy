@@ -1,5 +1,5 @@
 var Botkit = require('botkit')
-var Witbot = require('witbot')
+var Witbot = require('node-wit')
 
 var token = process.env.SLACK_TOKEN
 var witToken = process.env.WIT_TOKEN
