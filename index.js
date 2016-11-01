@@ -1,5 +1,3 @@
-'use strict'
-
 var Botkit = require('botkit')
 var Witbot = require('node-wit')
 
