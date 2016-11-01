@@ -28,3 +28,9 @@ if (token) {
   console.log('Starting in Beep Boop multi-team mode')
   require('beepboop-botkit').start(controller, { debug: true })
 }
+
+wit.captureTextIntent(witToken, "hello", function (err, res) {
+    console.log("Response from Wit for text input: ");
+    if (err) console.log("Error: ", err);
+    console.log(JSON.stringify(res, null, " "));
+});
