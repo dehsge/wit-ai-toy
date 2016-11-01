@@ -31,7 +31,7 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-var client = new Wit({
+var client = new function Wit({
     accessToken: witToken,
     actions: {
         send(request, response) {
