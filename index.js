@@ -47,4 +47,4 @@ var client = new function Wit({
             return Promise.resolve(context);
         }
     }
-});
+})
