@@ -29,4 +29,4 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-var a = Witbot({accessToken: witToken})
+var a = new Witbot({accessToken: witToken})
