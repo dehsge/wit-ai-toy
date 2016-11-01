@@ -29,4 +29,10 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-var a = Witbot.Wit({accessToken: witToken})
+var witbot = Witbot.Wit({accessToken: witToken})
+
+witbot.message('hello', {})
+    .then((data) => {
+    console.log('Yay, got Wit.ai response: ' + JSON.stringify(data))
+})
+.catch(console.error)
