@@ -30,7 +30,6 @@ if (token) {
   console.log('Starting in Beep Boop multi-team mode')
   require('beepboop-botkit').start(controller, { debug: true })
 }
-const {Wit, log} = require('node-wit');
 
 const client = new Wit({
     accessToken: MY_TOKEN,
