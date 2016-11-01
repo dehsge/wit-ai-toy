@@ -1,7 +1,7 @@
 'use strict'
 
 var Botkit = require('botkit')
-var Wit = require('node-wit')
+var Witbot = require('node-wit')
 
 var token = process.env.SLACK_TOKEN
 var witToken = process.env.WIT_TOKEN
@@ -31,20 +31,4 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-var client = new function Wit({
-    accessToken: witToken,
-    actions: {
-        send(request, response) {
-            return new Promise(function (resolve, reject) {
-                console.log(JSON.stringify(response))
-                return resolve()
-            })
-        },
-        myAction({sessionId, context, text, entities}) {
-            console.log(`Session ${sessionId} received ${text}`)
-            console.log(`The current context is ${JSON.stringify(context)}`)
-            console.log(`Wit extracted ${JSON.stringify(entities)}`)
-            return Promise.resolve(context)
-        }
-    }
-})
+var a = Witbot({accessToken: witToken})
