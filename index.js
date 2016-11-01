@@ -31,7 +31,7 @@ if (token) {
 
 var witbot = Witbot.Wit({accessToken: witToken})
 
-witbot.message('hi', {})
+witbot.message('hello hello', {})
     .then((data) => {
     console.log('Yay, got Wit.ai response: ' + JSON.stringify(data))
 })
